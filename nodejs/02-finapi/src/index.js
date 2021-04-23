@@ -76,6 +76,14 @@ app.get("/statement/", verifyIfExistsAccountCPF, (request, response) => {
     return response.json(customer.statement);
 })
 
+app.delete("/account/", verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+    
+    customers.splice(customer, 1);
+
+    return response.status(200).json(customers);
+})
+
 app.post("/deposit", verifyIfExistsAccountCPF, (request, response) => {
     const { description, amount } = request.body;
 
@@ -124,6 +132,14 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
         statement.created_at.toDateString() === new Date(dateFormat).toDateString());
 
     return response.json(statement);
+})
+
+app.get("/balance", verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+
+    const balance = getBalance(customer.statement);
+
+    return response.json(balance);
 })
 
 app.listen(3333);
