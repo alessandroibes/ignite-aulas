@@ -8,7 +8,7 @@ import { ListCategoriesService } from "../modules/cars/services/ListCategoriesSe
 
 const categoriesRoutes = Router();
 
-const categoriesRepository = new CategoriesRepository();
+const categoriesRepository = CategoriesRepository.getInstance();
 
 // Create Category
 const createCategoryService = new CreateCategoryService(categoriesRepository);
