@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 import { CreateCategoryService } from "../services/CreateCategoryService";
 
-class CreateCategoyController {
+class CreateCategoryController {
   constructor(private createCategoryService: CreateCategoryService) {}
 
   handle(request: Request, response: Response): Response {
@@ -14,4 +14,4 @@ class CreateCategoyController {
   }
 }
 
-export { CreateCategoyController };
+export { CreateCategoryController };
