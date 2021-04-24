@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import { CreateCategoryController } from "../modules/cars/controller/CreateCategoryController";
 import { ListCategoriesController } from "../modules/cars/controller/ListCategoriesController";
-import { CategoriesRepository } from "../modules/cars/repositories/CategoriesRepository";
+import { CategoriesRepository } from "../modules/cars/repositories/implementations/CategoriesRepository";
 import { CreateCategoryService } from "../modules/cars/services/CreateCategoryService";
 import { ListCategoriesService } from "../modules/cars/services/ListCategoriesService";
 
