@@ -30,7 +30,7 @@ const listCategoriesController = new ListCategoriesController(
 );
 
 // Import Categories
-const importCategoryService = new ImportCategoryService();
+const importCategoryService = new ImportCategoryService(categoriesRepository);
 const importCategoryController = new ImportCategoryController(
   importCategoryService
 );
